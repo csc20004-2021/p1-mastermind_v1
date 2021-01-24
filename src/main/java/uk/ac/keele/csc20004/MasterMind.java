@@ -19,19 +19,19 @@ public class MasterMind {
    *
    * @param args the command line arguments (not used in this example)
    */
-    public static void main(String[] args) {
-        ColourCode masterCode = new ColourCode();
+    public static void main(final String[] args) {
+        final ColourCode masterCode = new ColourCode();
         System.out.println("Master code generated.");
 
         // Only for debugging purposes, we are showing the hidden code
         System.out.println("Master code: " + masterCode);
 
-        Scanner scanner = new Scanner(System.in);
+        final Scanner scanner = new Scanner(System.in);
 
         int result = 0;
-        while(result != 44) {
-            System.out.print("Enter code: ");
-            ColourCode inputCode = new ColourCode(scanner.next());
+        while (result != 44) {
+            System.out.println("Enter code: ");
+            final ColourCode inputCode = new ColourCode(scanner.next());
             result = inputCode.compareTo(masterCode);
             System.out.println("C:" + (result/10) + "  P:" + (result - ((result/10)*10)));
         }
